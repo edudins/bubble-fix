@@ -1,0 +1,11 @@
+
+.plot {
+    background-color: ;
+    width: 100vw;
+    height: 100vw;
+}
+
+.click-circle {
+    fill: #208be3;
+    stroke: white;
+}

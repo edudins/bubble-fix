@@ -1,15 +1,17 @@
 (function() {
+    // svg element variables
     var svg = d3.select('svg');
     var circle = svg.append("circle")
         .attr("cx", 500)
         .attr("cy", 500)
         .attr("r", 50)
         .style('fill', 'green');
+    // Spiral variables
     var a = 5;
     var t = 0;
 
     function randomColour() {
-      let randomColour = Math.floor(Math.random()*16777215).toString(16);
+      let randomColour = Math.floor(Math.random() * 16777215).toString(16);
       return "#" + randomColour;
     }
 
@@ -32,6 +34,11 @@
       }
     };
 
+    function moveCircleRandomly() {
+      let posX = Math.floor(Math.random() * svg.style("width");
+      let posY = Math.floor(Math.random() * svg.style("width"));
+      console.log(posX, posY);
+    }
 
     circle.on('click', function() {
         moveCircleInSpiral()

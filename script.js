@@ -66,8 +66,8 @@
         position();
     });
 
-    circle.on('interrupt', function() {
-      resetCircle();
-    });
+//     circle.on('interrupt', function() {
+//       resetCircle();
+//     });
 
 })();

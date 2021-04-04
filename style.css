@@ -1,8 +1,10 @@
-
+body {
+  margin: 0;
+}
 .plot {
-    background-color: ;
+    background-color: #DCF0FE;
     width: 100vw;
-    height: 100vw;
+    height: 100vh;
 }
 
 .click-circle {

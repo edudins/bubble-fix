@@ -1,11 +1,11 @@
-(function() {
+function Circle() {
     // svg element variables
     var svg = d3.select('svg');
     // calc screen screen width
     var windowWidth = document.documentElement.clientWidth;
     var windowHeight = document.documentElement.clientHeight;
     // movement speed in milliseconds
-    var speed = 1000;
+    var speed = 750;
     // position init
     var posX = windowWidth / 2;
     var posY = windowHeight / 2;
@@ -51,7 +51,7 @@
       }
     };
 
-    function moveCircleRandomly() {
+    var functionToRun = function moveCircleRandomly() {
       let min = 0 + r;
       let mX = windowWidth - r;
       let mY = windowHeight - r;
@@ -59,15 +59,13 @@
       posX = Math.ceil(Math.random()*(mX-min) + min);
       posY = Math.ceil(Math.random()*(mY-min) + min);
       moveCircle(posX, posY);
+      console.log(posX, posY);
     }
 
-    circle.on('click', function() {
-        moveCircleRandomly()
-        position();
-    });
+    setInterval(functionToRun, speed);
 
-//     circle.on('interrupt', function() {
-//       resetCircle();
-//     });
+    // circle.on('click', function() {
+    //   setInterval(functionToRun, speed);
+    // });
 
-})();
+}

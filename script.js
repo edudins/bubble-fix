@@ -59,7 +59,6 @@ function Circle() {
       posX = Math.ceil(Math.random()*(mX-min) + min);
       posY = Math.ceil(Math.random()*(mY-min) + min);
       moveCircle(posX, posY);
-      console.log(posX, posY);
     }
 
     setInterval(functionToRun, speed);

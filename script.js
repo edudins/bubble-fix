@@ -64,8 +64,4 @@ function Circle() {
 
     setInterval(functionToRun, speed);
 
-    // circle.on('click', function() {
-    //   setInterval(functionToRun, speed);
-    // });
-
 }

@@ -37,6 +37,7 @@ function Circle() {
       .style('fill', randomColour())
   }
 
+<<<<<<< HEAD
   function moveCircleInSpiral() {
     // Calculate next point on spiral
     posX = a * t * Math.cos(t)
@@ -48,6 +49,30 @@ function Circle() {
       t += 1
     } else {
       t = 0
+=======
+    function moveCircleInSpiral() {
+      // Calculate next point on spiral
+      posX = a * t * Math.cos(t);
+      posY = a * t * Math.sin(t);
+      // Move circle
+      moveCircle(posX + 500, posY + 500);
+      // Update 'time' variable
+      if (t !== 100) {
+        t += 1;
+      } else {
+        t = 0;
+      }
+    };
+
+    var functionToRun = function moveCircleRandomly() {
+      let min = 0 + r;
+      let mX = windowWidth - r;
+      let mY = windowHeight - r;
+      // random number between min and max including max
+      posX = Math.ceil(Math.random()*(mX-min) + min);
+      posY = Math.ceil(Math.random()*(mY-min) + min);
+      moveCircle(posX, posY);
+>>>>>>> 95a50b680464c81efee68d7aca52aba365143d09
     }
   }
 

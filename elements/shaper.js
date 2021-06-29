@@ -1,8 +1,4 @@
-function Square() {
-  console.log("Square initialize ...")
-}
-
-function Circle() {
+function drawShape(buttonPressed) {
   // svg element variables
   var svg = d3.select('svg')
   // calc screen screen width
@@ -21,13 +17,18 @@ function Circle() {
     .attr('r', r)
     .style('fill', 'green')
     .style('stroke', 'black')
+  // square init
+  var h = 100
+  var square = svg.append('rect')
+    .attr('x', posX)
+    .attr('y', posY)
+    .attr('width', h)
+    .attr('height', h)
+    .style('fill', 'green')
+    .style('stroke', 'black')
   // Spiral variables
   var a = 5
   var t = 0
-
-  function position() {
-    console.log("X: " + posX + " " + "Y: " + posY)
-  }
 
   function randomColour() {
     let randomColour = Math.floor(Math.random() * 16777215).toString(16)
@@ -38,6 +39,13 @@ function Circle() {
     circle.transition().duration(speed)
       .attr('cx', posX)
       .attr('cy', posY)
+      .style('fill', randomColour())
+  }
+
+  function moveSquare(posX, posY) {
+    square.transition().duration(speed)
+      .attr('x', posX)
+      .attr('y', posY)
       .style('fill', randomColour())
   }
 
@@ -63,7 +71,12 @@ function Circle() {
     posX = Math.ceil(Math.random() * (mX - min) + min)
     posY = Math.ceil(Math.random() * (mY - min) + min)
     moveCircle(posX, posY)
+    posX = Math.ceil(Math.random() * (mX - min) + min)
+    posY = Math.ceil(Math.random() * (mY - min) + min)
+    moveSquare(posX, posY)
   }
+
+
 
   setTimeout(functionToRun, speed)
 

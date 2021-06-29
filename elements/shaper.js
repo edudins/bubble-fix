@@ -1,3 +1,7 @@
+function Square() {
+  console.log("Square initialize ...")
+}
+
 function Circle() {
   // svg element variables
   var svg = d3.select('svg')
@@ -59,9 +63,8 @@ function Circle() {
     posX = Math.ceil(Math.random() * (mX - min) + min)
     posY = Math.ceil(Math.random() * (mY - min) + min)
     moveCircle(posX, posY)
-    console.log(posX, posY)
   }
 
-  setInterval(functionToRun, speed)
+  setTimeout(functionToRun, speed)
 
 }

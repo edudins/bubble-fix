@@ -20,8 +20,8 @@ function drawShape(buttonPressed) {
   // square init
   var h = 100
   var square = svg.append('rect')
-    .attr('x', posX)
-    .attr('y', posY)
+    .attr('x', posX - r)
+    .attr('y', posY - r)
     .attr('width', h)
     .attr('height', h)
     .style('fill', 'green')
